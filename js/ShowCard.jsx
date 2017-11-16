@@ -20,14 +20,15 @@ const Image = styled.img`
   float: left;
   margin-right: 10px;
 `;
-class ShowCard extends Component{
-  shouldComponentUpdate(){
-     return false; // never what to update - saves on performance
+
+class ShowCard extends Component {
+  shouldComponentUpdate() {
+    return false;
   }
-  props: Show
-  render(){
-    return(
-      <Wrapper to={`/details/${this.props.imdbID}`}>
+  props: Show;
+  render() {
+    return (
+      <Wrapper className="show-card" to={`/details/${this.props.imdbID}`}>
         <Image alt={`${this.props.title} Show Poster`} src={`/public/img/posters/${this.props.poster}`} />
         <div>
           <h3>{this.props.title}</h3>
@@ -35,7 +36,7 @@ class ShowCard extends Component{
           <p>{this.props.description}</p>
         </div>
       </Wrapper>
-    )
+    );
   }
 }
 
